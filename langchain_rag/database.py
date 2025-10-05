@@ -47,3 +47,4 @@ class RagDB:
         cursor.close()
         connection.close()
         return messages
+
