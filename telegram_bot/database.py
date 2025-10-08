@@ -18,6 +18,7 @@ def create_chat_details():
     connection.commit()
     cursor.close()
     connection.close()
+    print("returning none")
 
 def insert_chat_details(chat_id):
     connection = get_db_connection()
@@ -27,6 +28,7 @@ def insert_chat_details(chat_id):
     connection.commit()
     cursor.close()
     connection.close()
+    print("returning session_id")
     return session_id
 
 def get_session_id(chat_id):
@@ -38,6 +40,7 @@ def get_session_id(chat_id):
     connection.close()
     if row:
         return row[0]
+    print("Inserting new chart details")
     return insert_chat_details(chat_id)
 
 create_chat_details()
